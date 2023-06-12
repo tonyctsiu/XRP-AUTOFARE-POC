@@ -5,9 +5,7 @@ const main = async () => {
 
   if (process.argv.length < 5) {
     console.log("sending payment to destination account");
-    console.log(
-      "Usage: node dist/getAccountDetail <FamilySeed> <destinationAddr> XRP"
-    );
+    console.log("Usage: node dist/getAccountDetail <FamilySeed>");
     process.exit(1);
   }
 

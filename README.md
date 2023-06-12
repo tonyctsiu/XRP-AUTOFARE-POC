@@ -10,7 +10,7 @@ Usage: node dist/checkCreate <source FamilySeed> <destination: r-address> <XRP a
 Usage: node dist/checkCash <check recipient's FamilySeed> <CheckId> [cash amount]
 
 #Get Account Detail
-Usage: node dist/payment <FamilySeed> <destinationAddr> XRP
+Usage: node dist/getAccountDetail <FamilySeed>
 
 #XRP payment
 Usage: node dist/payment <FamilySeed> <destinationAddr> XRP
