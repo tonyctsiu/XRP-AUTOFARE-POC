@@ -26,4 +26,4 @@ execute: node dist/ticketcreate s#########(Family seed of the check creator)
 upon successful execution, it should return a new sequence number as follows:
 new sequence number = 38486563
 
-then execute: node dist/checkCreateWithTicket s#########s#########(Family seed of the check creator) r#####(r-address of check recipient) 1(arp amount for the check) 38486561 (the new ticket sequence number )
+then execute: node dist/checkCreateWithTicket s#########(Family seed of the check creator) r#####(r-address of check recipient) 1(arp amount for the check) 38486561(the new ticket sequence number)
