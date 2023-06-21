@@ -42,8 +42,8 @@ const main = async () => {
       InvoiceID:
         "6F1DFD1D0FE8A32E40E1F2C05CF1C15545BAB56B617F9C6C2D63A6B704BEF59B",
       DestinationTag: 1,
-      TicketSequence: 38486526,
-      Sequence: 0,
+      // TicketSequence: 38486526,
+      Sequence: sequence,
       Fee: "12",
     },
     account
@@ -55,16 +55,18 @@ const main = async () => {
     command: "submit",
     tx_blob: signedTransaction,
   });
+
   console.log("submission ", result);
   console.log("waiting for finality");
-  await sleep(10000);
-
-  data = await client.send({
-    command: "tx",
-    transaction: result.tx_json.hash,
+  // await sleep(10000);
+  const subscribeData = await client.send({
+    command: "subscribe",
+    accounts: [process.argv[3]],
   });
-  console.log("finality result: ", JSON.stringify(data, null, 2));
-  process.exit(1);
+  client.on("transaction", (data) => {
+    console.log("transaction result: ", data);
+    process.exit(1);
+  });
 };
 
 function sleep(ms: number) {
